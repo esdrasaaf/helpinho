@@ -12,19 +12,31 @@
 <a name="sobre-o-projeto"></a>
 
 ## 📋 Sobre o projeto
-### Tecnologias utilizadas
 
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![REACT](https://img.shields.io/badge/-React-blue?style=for-the-badge&color=5ed2f2&logo=react&logoColor=000000)
-![Javascript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&loo=javascript&logoColor=%23F7DF1E&logo=javascript&logoColor=%23F7DF1E)
-![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=flat&logo=styled-components&logoColor=white)
+### Meu planejamento
+- Meu plano inicial era desenvolver primeiro o front-end para depois iniciar o back-end, por fim adicionando o serveless.
 
-### Idealização do projeto
-- Esse projeto foi idealizado a partir de um sonho antigo da minha mãe, Anathusia Antero. Ela almejava ter uma marca de roupas infantis, empreender e criar seu próprio comércio. Então, utilizando meus conhecimentos em programação, desenvolvi um ecommerce focado em roupas infantis, para dar o que seria o ponta pé inicial para a concretização deste objetivo. Vale salientar que o site NÃO está totalmente completo! Mas, já está bem completo e com bastante funcionalidades. 
+### Contratempos
+- Infelizmente, a maior dificuldade que enfrentei foi uma viagem que precisei fazer para outra cidade. Acabei perdendo aproximadamente 4 dias que eu poderia ter usado para desenvolver ainda mais o projeto.
 
-### Link do back-end desse projeto
-- https://github.com/esdrasaaf/AngellesStore_Back
-- **É importante lembrar que para o usuário interagir os produtos, carrinho, lista de favoritos e afins, é necessário que o back-end esteja rodando em conjunto com o front-end :)**
+### Não consegui adicionar
+  Aqui vai uma lista das funcionalidades que eu não consegui implementar ao projeto:
+    - Serverless
+    - Carrossel Login/Register pages
+    - Filtrar pelo input text da página home
+    - Login pelo google
+    - Responsividade mobile
+    - DynamoDB
+    - Estilização completa (faltou dar o toque final em algumas partes)
+    - Máscaras em alguns valores
+    
+### Consegui adicionar
+  Agora uma lista das funcionalidades que eu consegui implementar ao projeto:
+    - Banco de dados local
+    - Página de login e cadastro funcionais e verificadas
+    - Página home
+    - Página da criação do helpinho
+  
 <a name="iniciando"></a>
 
 ## 🏁 Iniciando
