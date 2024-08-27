@@ -1,0 +1,103 @@
+<section class="flex flex-col w-[screen] h-screen items-center">
+    <app-header></app-header>
+
+    <div class="w-fit h-fit gap-[30px] rounded-2xl border-[#E7E7E7] border flex items-center justify-between py-[10px] px-[15px] mt-[150px]">
+        @for (step of stepInfos; track $index) {
+            @if ($index === stepNumber()) {
+                <div class="flex items-center justify-between w-fit gap-[10px]">
+                    <div class="h-[50px] w-[50px] bg-[#FF2E6B] rounded-full flex items-center justify-center">
+                        <img src="{{step.image}}" alt="step image"/>
+                    </div>
+                        
+    
+                    <div class="flex flex-col items-start justify-center">
+                        <span class="text-[#FF2E6B] font-bold text-[12px]">Passo {{stepNumber() + 1}}/4</span>
+                        <p class="text-[#454545] font-medium text-[16px]">{{step.title}}</p>
+                    </div>
+                </div>
+            } @else {
+                <div class="h-[50px] w-[50px] bg-[#F6F6F6] rounded-full flex items-center justify-center">
+                    <img src="{{step.image}}" alt="step image"/>
+                </div>
+            }
+        }
+    </div>
+
+    <section class="w-[95%] h-fit max-h-[75%] mt-[30px] mx-[50px] shadow-custom rounded-3xl px-[24px]  py-[24px]"> 
+        @if (0 === stepNumber()) {
+            <div>
+                <span class="text-[#3D3D3D] font-bold text-[20px]">{{actualStep().description}}</span>
+                <p class="text-[#4F4F4F] font-light text-[16px]">{{actualStep().text}}</p>
+            </div>
+
+            <ul class="flex flex-wrap mt-[25px] gap-[15px]">
+                @for (item of categories; track $index) {
+                    <li (click)="category.set(item.name)" class="h-[110px] w-[140px] flex flex-col justify-center items-center gap-[5px] border-[#E7E7E7] border rounded-2xl cursor-pointer {{ category() === item.name ? 'border-2 border-pink-400 font-semibold text-[#FF2E6B]' : '' }}">
+                        <img src="rocket.svg" alt="category icon" class="h-[50px] w-[50px]]"/>
+                        <span>{{item.name}}</span>
+                    </li>
+                }
+            </ul>
+        } @else if (1 === stepNumber()) {
+            <div>
+                <span class="text-[#3D3D3D] font-bold text-[20px]">{{actualStep().description}}</span>
+                <p class="text-[#4F4F4F] font-light text-[16px]">{{actualStep().text}}</p>
+            </div>
+
+            <div [formGroup]="helpForm" class="mt-[25px] flex flex-col gap-[25px] h-[85%]">
+                <app-input [controlName]="helpForm.get('title')" label="Título do helpinho" heigth="40px" placeholder="Seu título aqui" type="text"></app-input>
+                <app-input [controlName]="helpForm.get('image')" label="Adicione o link de uma imagem que representa seu helpinho" heigth="40px" placeholder="URL da imagem aqui" type="text"></app-input>
+                <app-input [controlName]="helpForm.get('description')" label="Descrição" heigth="100px" placeholder="Escreva a descrição do seu helpinho, não economize nas palavras" type="text"></app-input>
+            </div>
+        } @else if (2 === stepNumber()) {
+            <div>
+                <span class="text-[#3D3D3D] font-bold text-[20px]">{{actualStep().description}}</span>
+                <p class="text-[#4F4F4F] font-light text-[16px]">{{actualStep().text}}</p>
+            </div>
+
+            <ul class="flex flex-wrap gap-[15px] w-full justify-center items-center mt-[50px]">
+                @for (value of helpValues; track $index) {
+                    <li (click)="totalValue.set(value)" class="cursor-pointer h-[125px] w-[200px] flex flex-col justify-center items-center gap-[12px] border-[#E7E7E7] border rounded-2xl  {{ totalValue() === value ? 'border-2 border-pink-400 font-semibold text-[#FF2E6B]' : '' }}">
+                        <img src="{{value > 5000 ? 'rocket.svg' : 'heart.svg'}}" alt="value icon" class="h-[50px] w-[50px]"/>
+                        <span>R$ {{value}},00 </span>
+                    </li>
+                }
+            </ul>
+        } @else {
+            <div>
+                <span class="text-[#3D3D3D] font-bold text-[20px]">{{actualStep().description}}</span>
+                <p class="text-[#4F4F4F] font-light text-[16px]">{{actualStep().text}}</p>
+            </div>
+
+            <div class="my-[25px] pb-[40px] flex flex-col justify-center items-center gap-[25px] h-[85%]">
+                <div class="rounded-3xl p-[24px] h-[85%] w-[70%] flex justify-between border shadow-custom">
+                    <img class="w-[50%] rounded-l-lg" src="{{this.helpForm.controls.image.value}}" alt="card bg"/>
+
+                    <div class="w-[50%] h-[100%] flex flex-col justify-between items-center p-[25px] bg-slate-100 rounded-r-lg">
+                        <div class="flex flex-col justify-between max-h-[75%] gap-[10px]">
+                            <h1 class="font-semibold text-[25px] text-[#4F4F4F]">{{this.helpForm.controls.title.value}}</h1>
+    
+                            <span class="font-normal text-[16px] text-[#4F4F4F] text-justify">{{this.helpForm.controls.description.value}}</span>
+                        </div>
+
+                        <div class="flex w-fit gap-[100px] justify-between bg-[#FFE2E7] text-[#CE024C] p-[10px] rounded-xl">
+                            <p class=" text-[12px] flex gap-[5px] items-center h-[24px] px-[12px] py-[8px] rounded-full font-semibold"><span class="font-bold">Categoria: </span>{{this?.category()}}</p>
+    
+                            <p><span class="font-bold">Valor total: </span>R$ {{this?.totalValue()}},00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </section>
+
+    <div class="flex w-[95%] justify-end gap-[15px] p-[25px]">
+        <button (click)="previusStep()" class="bg-[#ffffff] text-[#4F4F4F] border border-[#B0B0B0] py-2 px-4 rounded-xl flex items-center justify-center">
+            {{stepNumber() > 0 ? "Voltar" : "Cancelar"}}
+        </button>
+
+        <button (click)="nextStep()" class="bg-[#FF2E6B] text-[#FFE2E7] p-2 px-4 rounded-xl flex items-center justify-center w-fit">
+            {{stepNumber() !== 3 ? "Continuar" : "Publicar helpinho"}}
+        </button>
+    </div>
+</section>

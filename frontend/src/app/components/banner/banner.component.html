@@ -1,0 +1,65 @@
+
+<section class="h-screen w-full bg-gradient-to-tl from-[#FF648E] flex pt-[200px] px-[200px] justify-between">
+    @if (isAuth) {
+        <div class="flex flex-col w-[500px] h-fit">
+            
+            <h1 class="font-sans font-light text-5xl text-[#454545]">Olá, <span class="font-bold text-[#454545]">{{userData?.user?.name}}!</span></h1>
+            
+            <h2 class="font-sans font-normal text-[24px] text-[#5D5D5D] mt-[40px]">Vamos dá um <span class="font-bold text-[#FF2E6B]">helpinho</span> hoje? Separamos uma seleção especial para você</h2>
+            
+            <div class="flex items-center justify-between gap-[10px] bg-[#ffffff40] rounded-xl px-[25px] h-[80px] w-[65%] font-normal text-[16px] text-[#5D5D5D] mt-[15px]">
+                <h6 class="w-fit text-start">Acompanhando <br> <span class="font-bold text-[#FF2E6B] text-[24px]">17</span> helpinhos</h6>
+                <h6 class="w-fit text-start">Criou <br> <span class="font-bold text-[#FF2E6B] text-[24px]">24</span> helpinhos</h6>
+            </div>
+        </div>
+
+        <div class="bg-[url('/maskGroup.png')] bg-no-repeat w-[207px] h-[250px] flex flex-col justify-center items-center gap-[30px]">
+            <div class="text-center flex flex-col">
+                <p class="font-light text-[#3D3D3D] text-[14px]">Você já doou</p>
+                <span class="font-bold text-[#FF2E6B] text-[35px]"><span class="font-semibold text-[#FF2E6B] text-[20px]">R$</span>1.500,00</span>
+            </div>
+
+            <div class="text-center flex flex-col">
+                <span class="font-bold text-[#FF2E6B] text-[35px]">17</span>
+                <p class="font-light text-[#3D3D3D] text-[14px]">Helpinho alegres</p>
+            </div>
+        </div>
+    } @else {
+        <div class="flex flex-col w-1/2">
+            <div class="flex items-center justify-between bg-[#ffffff40] rounded-xl px-[20px] h-[60px] w-[500px] font-normal text-[17px] text-[#5D5D5D] mb-[30px]">
+                <div class="flex h-[20px] gap-[7px] items-center">
+                    <img src="check.png" alt="check icon"/>
+                    <p>Registro grátis</p>
+                </div>
+    
+                <div class="flex h-[20px] gap-[7px] items-center">
+                    <img src="check.png" alt="check icon"/>
+                    <p>Sem taxas</p>
+                </div>
+    
+                <div class="flex h-[20px] gap-[7px] items-center">
+                    <img src="check.png" alt="check icon"/>
+                    <p>Rápido e prático</p>
+                </div>
+            </div>
+    
+            <h1 class="font-sans font-light text-5xl text-[#454545]">Faça a diferença com apenas <p class="font-bold text-[#FF2E6B]">um helpinho</p></h1>
+    
+            <h2 class="font-sans font-normal text-[24px] text-[#5D5D5D] mt-[24px]">Os helpinhos podem parecer pequenos, mas juntos fazem a <p class="font-bold text-[#FF2E6B]">diferença na vida de todos</p></h2>
+    
+            <a [routerLink]="['/register']" class="bg-[#FF2E6B] text-[#FFE2E7] py-4 px-6 rounded-xl mt-[30px] w-[200px] text-center">Registre-se grátis</a>
+        </div>
+
+        <div class="flex items-end justify-between gap[30px] gap-[100px] w-fit h-fit">
+            <div class= "h-full relative">
+                <img src="string1.png" alt="string image" class="absolute bottom-[-70px] left-[-170px]"/>
+                <img src="bannerGirl.png" alt="girl image" class="rounded-full"/>
+            </div>
+            
+            <div class="flex relative">
+                <img src="string2.png" alt="string image"class="absolute bottom-[-15px] left-[-20px]"/>
+                <img src="bannerBoy.png" alt="boy image" class="rounded-full"/>
+            </div>
+        </div>
+    }
+</section>

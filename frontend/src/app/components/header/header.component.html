@@ -1,0 +1,34 @@
+<header class="h-[100px] flex justify-between items-center px-[80px] absolute top-0 left-0 w-full">
+    <img routerLink="/" src="logoH.png" alt="helpinho" class="cursor-pointer"/>
+
+    <div class="text-[16px] text-[#888888] font-semibold flex gap-[60px] justify-between">
+        <a class="text-[16px] pb-[5px] border-b-[2px] border-b-[#FF2E6B] text-[#FF2E6B] cursor-pointer">Home</a>
+        <a class="text-[16px] pb-[5px] select-none">Pesquisa</a>
+        <a class="text-[16px] pb-[5px] select-none">Sobre</a>
+    </div>
+
+    @if (isAuth) {
+        <div class="flex h-[40px] justify-between items-center gap-[12px]">
+            <img src="{{userData?.user?.image}}" alt="" class="rounded-full max-h-[30px] min-h-[30px] min-w-[30px] max-w-[30px]"/>
+
+            <div>
+                <p class="text-[14px] text-[#4F4F4F] font-semibold">{{userData?.user?.name}}</p>
+                <p class="text-[12px] text-[#5D5D5D] font-medium">{{userData?.user?.email}}</p>
+            </div>
+
+            <button (click)="logout()" class="bg-[#FF2E6B] text-[#FFE2E7] rounded-xl ml-1 w-[40px] h-[40px] flex justify-center items-center">
+                <img src="log-out.png" alt="log-out icon"/>
+            </button>
+        </div>
+    } @else () {
+        <div class="font-semibold text-[16px] flex gap-[15px]">
+            <a [routerLink]="['/register']" routerLinkActive="router-link-active" class="bg-[#FFE2E7] text-[#FF2E6B] py-2 px-4 rounded-xl">
+                Registre-se grátis
+            </a>
+
+            <a [routerLink]="['/login']" class="bg-[#FF2E6B] text-[#FFE2E7] p-2 px-4 rounded-xl">
+                Login
+            </a>
+        </div> 
+    }
+</header>

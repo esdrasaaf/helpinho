@@ -1,0 +1,40 @@
+<li class="h-[500px] w-[400px] rounded-3xl border shadow-custom">
+    <div class="h-[230px] flex justify-end items-end relative">
+        <img src="{{cardInfo().background}}" alt="" class="w-full h-full rounded-3xl rounded-b-none"/>
+        <span class="bg-[#FFE2E7] text-[#CE024C] text-[12px] flex items-center h-[24px] px-[12px] py-[8px] rounded-full font-semibold select-none absolute bottom-[12px] right-[16px]">{{cardInfo().category}}</span>
+    </div>
+
+    <section class="px-[24px] mt-[16px]">
+        <div class="flex gap-[10px] items-center select-none">
+            <img src="{{cardInfo().author.photo}}" alt="" class="rounded-full max-h-[30px] min-h-[30px] min-w-[30px] max-w-[30px]"/>
+
+            <div>
+                <p class="text-[14px] text-[#4F4F4F] font-semibold">{{cardInfo().author.name}}</p>
+                <p class="text-[12px] text-[#5D5D5D] font-medium">{{cardInfo().author.email}}</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-[12px] mb-[32px] mt-[16px]">
+            <h1 class="font-semibold text-[24px] text-[#3D3D3D]">{{cardInfo().title}}</h1>
+            <span class="font-normal text-[16px] text-[#3D3D3D]">{{cardInfo().description}}</span>
+        </div>
+
+        <ul class="overflow-hidden flex relative w-full h-[35px]">
+            @if (cardInfo().helpers.length > 10) {
+                @for (userImage of cardInfo().helpers.slice(-10); track $index) {
+                    <div class="ml-[20px] first:ml-0">
+                        <img class="h-[35px] w-[35px] rounded-full border-white border-[3px] absolute z-[{{$index}}]" src="{{userImage}}" alt="helper image" />
+                    </div>
+                }
+
+                <div class="ml-[20px] z-[11] text-[#FF2E6B] font-medium text-[14px] flex justify-center items-center bg-[#FFF0F3] h-[35px] w-[35px] rounded-full border-white border-[3px]">+{{(cardInfo().helpers.length - 10)}}</div>
+            } @else () {
+                @for (userImage of cardInfo().helpers; track $index) {
+                    <div class="ml-[20px] first:ml-0">
+                        <img class="h-[35px] w-[35px] rounded-full border-white border-[3px] absolute z-[{{$index}}]" src="{{userImage}}" alt="helper image" />
+                    </div>
+                }
+            }
+        </ul>
+    </section>
+</li>

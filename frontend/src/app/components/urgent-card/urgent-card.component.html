@@ -1,0 +1,41 @@
+<li class="h-[500px] w-[400px] rounded-3xl border shadow-custom px-[24px] py-[32px] flex flex-col relative text-[#F6F6F6]">
+    <img src="{{cardInfo().background}}" alt="" class="w-full h-full rounded-3xl absolute top-0 left-0 z-[-2]"/>
+
+    <div class="z-[-1] absolute top-0 left-0 rounded-3xl h-full w-full mix-blend-multiply bg-blend-hard-light bg-[linear-gradient(190deg,rgb(255,229,229),rgb(227,130,156)),url('/texture.png'),url('/texture.png')]"></div>
+    
+    <div class="flex items-center justify-between select-none">
+        <div  class="flex items-center gap-[10px]">
+            <img src="{{cardInfo().author.photo}}" alt="" class="rounded-full max-h-[30px] min-h-[30px] min-w-[30px] max-w-[30px]"/>
+            <p class="text-[14px] font-semibold">{{cardInfo().author.name}}</p>
+        </div>
+
+        <span class="bg-[#FFE2E7] text-[#CE024C] text-[12px] flex items-center h-[24px] px-[12px] py-[8px] rounded-full font-semibold select-none bottom-[12px] right-[16px]">{{cardInfo().category}}</span>
+    </div>
+
+    <div class="flex flex-col h-full gap-[12px] mb-[40px] mt-[30px]">
+        <h1 class="font-semibold text-[24px]">{{cardInfo().title}}</h1>
+        <span class="font-normal text-[16px]">{{cardInfo().description}}</span>
+    </div>
+    
+    <div class="flex flex-col gap-[40px]">
+        <span class="bg-[#FF263760] text-[14px]  font-medium w-[100%] h-[40px] flex items-center justify-center rounded-xl select-none">Helpinho urgente avaliado pela nossa equipe</span>
+
+        <ul class="overflow-hidden flex relative w-full h-[35px]">
+            @if (cardInfo().helpers.length > 10) {
+                @for (userImage of cardInfo().helpers.slice(-10); track $index) {
+                    <div class="ml-[20px] first:ml-0">
+                        <img class="h-[35px] w-[35px] rounded-full border-white border-[3px] absolute z-[{{$index}}]" src="{{userImage}}" alt="helper image" />
+                    </div>
+                }
+
+                <div class="ml-[20px] z-[11] text-[#FF2E6B] font-medium text-[14px] flex justify-center items-center bg-[#FFF0F3] h-[35px] w-[35px] rounded-full border-white border-[3px]">+{{(cardInfo().helpers.length - 10)}}</div>
+            } @else () {
+                @for (userImage of cardInfo().helpers; track $index) {
+                    <div class="ml-[20px] first:ml-0">
+                        <img class="h-[35px] w-[35px] rounded-full border-white border-[3px] absolute z-[{{$index}}]" src="{{userImage}}" alt="helper image" />
+                    </div>
+                }
+            }
+        </ul>
+    </div>
+</li>

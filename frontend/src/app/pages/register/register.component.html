@@ -1,0 +1,50 @@
+<section class="flex min-h-[100vh] max-h-[100vh] w-[100vw] p-[30px]">
+    <div class="w-[50%] flex flex-col justify-between">
+        <a [routerLink]="['/']" class="p-[32px]"><img src="logoH.png" alt="logo horizontal"/></a>    
+
+        <div class="flex flex-col justify-between items-center">
+            <div class="flex flex-col w-[400px]">
+                <h1 class="font-semibold text-[30px] text-[#3D3D3D] mb-[12px]">Registre-se grátis!</h1>
+                <h2 class="font-normal text-[16px] text-[#4F4F4F] mb-[32px]">Seja bem vindo! Estamos felizes em te-lo em nossa rede de apoio</h2>
+            </div>
+
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-[22px] w-[400px]">
+                <app-input [controlName]="registerForm.get('name')" label="Nome *" type="text" placeholder="Como podemos lhe chamar" width="100%" heigth="40px"/>
+
+                <app-input [controlName]="registerForm.get('email')" label="Email *" type="email" placeholder="Escreva seu melhor email" width="100%" heigth="40px"/>
+
+                <div class="flex justify-between gap-[10px]">
+                    <app-input [controlName]="registerForm.get('cpf')" label="CPF *" type="text" placeholder="000.000.000-00" width="100%" heigth="40px"/>
+                    <app-input [controlName]="registerForm.get('number')" label="Telefone *" type="text" width="100%" heigth="40px"/>
+                </div>
+
+                <app-input [controlName]="registerForm.get('password')" label="Senha *" type="password" hint="No mínimo 8 caracteres, letras e números" width="100%" heigth="40px"/>
+
+                <button class="w-[400px] text-center py-[10px] bg-[#F40B59] text-white rounded-lg font-semibold">
+                    Cadastre-se grátis
+                </button>
+            </form>
+
+            <button type="submit" class="flex mb-[32px] mt-[16px] text-[#4F4F4F] w-[400px] justify-center gap-[10px] py-[10px] border border-neutral-400/70 rounded-lg font-semibold">
+                <img src="google.png" alt="googleLogo"/>
+                <p>Continuar com o Google</p>
+            </button>
+
+            <p class="cursor-default text-[14px] text-[#4F4F4F] font-medium">
+                Já tem uma conta?
+                <a routerLink="/login" class="font-bold text-[#f40b59] hover:text-[#d30a4d] cursor-pointer">Faça o login!</a>
+            </p>
+        </div>
+
+        <div class="hidden lg:flex justify-between text-[14px] text-[#5D5D5D] p-[32px]">
+            <p>© Helpinho 2024</p>
+
+            <div class="flex gap-[10px] items-center">
+                <img src="mail.png" alt="mailLogo"/>
+                <p>{{'help@helpinho.com'}}</p>
+            </div>
+        </div>
+    </div>
+
+    <app-carousel class="w-[50%]"/>
+</section>
