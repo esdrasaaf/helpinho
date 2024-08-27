@@ -20,22 +20,22 @@
 - Infelizmente, a maior dificuldade que enfrentei foi uma viagem que precisei fazer para outra cidade. Acabei perdendo aproximadamente 4 dias que eu poderia ter usado para desenvolver ainda mais o projeto.
 
 ### Não consegui adicionar
-  Aqui vai uma lista das funcionalidades que eu não consegui implementar ao projeto:
-    - Serverless
-    - Carrossel Login/Register pages
-    - Filtrar pelo input text da página home
-    - Login pelo google
-    - Responsividade mobile
-    - DynamoDB
-    - Estilização completa (faltou dar o toque final em algumas partes)
-    - Máscaras em alguns valores
+Aqui vai uma lista das funcionalidades que eu não consegui implementar ao projeto:
+  - Serverless
+  - Carrossel Login/Register pages
+  - Filtrar pelo input text da página home
+  - Login pelo google
+  - Responsividade mobile
+  - DynamoDB
+  - Estilização completa (faltou dar o toque final em algumas partes)
+  - Máscaras em alguns valores
     
 ### Consegui adicionar
-  Agora uma lista das funcionalidades que eu consegui implementar ao projeto:
-    - Banco de dados local
-    - Página de login e cadastro funcionais e verificadas
-    - Página home
-    - Página da criação do helpinho
+Agora uma lista das funcionalidades que eu consegui implementar ao projeto:
+  - Banco de dados local
+  - Página de login e cadastro funcionais e verificadas
+  - Página home
+  - Página da criação do helpinho
   
 <a name="iniciando"></a>
 
