@@ -29,22 +29,33 @@ Aqui vai uma lista das funcionalidades que eu não consegui implementar ao proje
   - DynamoDB
   - Estilização completa (faltou dar o toque final em algumas partes)
   - Máscaras em alguns valores
+  - Não deu tempo de finalizar a lógica de doação no back-end
     
 ### Consegui adicionar
 Agora uma lista das funcionalidades que eu consegui implementar ao projeto:
   - Banco de dados local
   - Página de login e cadastro funcionais e verificadas
-  - Página home
-  - Página da criação do helpinho
+  - Página home com filtro baseado na categoria
+  - Página da criação do helpinho funcional
+  - Página do helpinho semi-funcional
   
 <a name="iniciando"></a>
 
 ## 🏁 Iniciando
 
+#Front-end
+
 Clone o repositorio
 
 ```bash
-$ git clone https://github.com/esdrasaaf/AngellesStore_Front.git
+$ git clone https://github.com/esdrasaaf/helpinho.git
+
+```
+
+Entre na pasta
+
+```bash
+cd front-end
 
 ```
 
@@ -57,7 +68,35 @@ $ npm i
 E por fim, rode o comando para iniciar a aplicação
 
 ```bash
-$ npm start
+$ ng serve
+```
+
+#Back-end
+
+Clone o repositorio
+
+```bash
+$ git clone https://github.com/esdrasaaf/helpinho.git
+
+```
+
+Entre na pasta
+
+```bash
+cd back-end
+
+```
+
+Instale as dependências
+
+```bash
+$ npm i
+```
+
+E por fim, rode o comando para iniciar a aplicação
+
+```bash
+$ npm run dev
 ```
 
 <a name="contribuindo"></a>
