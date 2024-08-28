@@ -43,7 +43,7 @@ Agora uma lista das funcionalidades que eu consegui implementar ao projeto:
 
 ## 🏁 Iniciando
 
-#Front-end
+# Front-end
 
 Clone o repositorio
 
@@ -71,7 +71,7 @@ E por fim, rode o comando para iniciar a aplicação
 $ ng serve
 ```
 
-#Back-end
+# Back-end
 
 Clone o repositorio
 
@@ -101,17 +101,11 @@ $ npm run dev
 
 <a name="contribuindo"></a>
 
-## 🏁 Rotas
+## 🏁 Rotas back-end
 
-1. Rota de login do usuário:
-
-    Route: ```"/"```
+1. Rota para cadastrar um novo usuario:
     
-    Descrição: Essa rota serve para que o usuário logue no site com a sua conta.
-
-2. Rota para cadastrar um novo usuario:
-    
-    Route ```"/sign-up"``` 
+    Route ```"/auth/signup"``` 
 
     Descrição: Essa rota serve para que o usuário cadastre-se no site. 
     
@@ -121,109 +115,53 @@ $ npm run dev
             "name": "esdras",
             "email": "teste@gmail.com.br",
             "password": "123456",
-            "image": "image url"  
+            "cpf": "numero de cpf",
+            "number": "numero de telefone" 
         }
     ```
 
-3. Rota para acessar a página principal:
+2. Rota para o usuário logar ao sistema e receber seu token:
     
-    Route: ```"/home"``` 
+    Route: ```"/auth/signin"``` 
 
-    Descrição: Nesta rota o usuário estará acessando a página home do site, visualizando as principais promoções, produtos, categorias e funcionalidades do site.
-    
-
-4. Visualizar produtos específicos do ecommerce:
-    
-    Route: ```"/product/:productId"``` 
-
-    Descrição: Nesta rota vai aparecer as informações do produto que você selecionou.
-
-5. Página de pesquisa do produto: 
-
-    Route get: ```"/product/search/:productName"``` 
-    
-    Descrição: Nesta rota o usuário é redirecionado para a página de pesquisa , onde os resultados aparecem por meio da filtragem de nome. 
-
-
-6. Categorias:
-
-    Route get: ```"/category/:categoryId"```
-    
-    Descrição: Nesta rota, é apresentado os produtos de uma determinada categoria.
-
-    
-7. Catálogo:
-
-    Route get: ```"/catalog"```
-    
-    Descrição: Nesta rota é apresentado todos os produtos disponíveis no site.
-
-
-8. Página do Usuário:
-
-    Route get: ```"/user"```
-    
-    Descrição: Nesta rota, o usuário pode ver todas as suas informações, bem como o seu email, senha, foto de perfil e compras realizadas.
-
-
-9. Página do Usuário:
-
-    Route get: ```"/saves"```
-    
-    Descrição: Nesta rota, o usuário pode ver todos os produtos favoritados.
-
-10. Carrinho:
-
-    Route post: ```"/cart"```
-    
-    Descrição: Nesta rota, o usuário poderá ver a sua lista de compras e de fato efetuar a sua comprar atravéz da API da stripe.
-
-    Body:
+    Descrição: Nesta rota o usuário estará logando com suas informações enviadas posteriormente no formulário de registro.
    
-    ```
-      [
+   Entrada:
+    ```bash
         {
-          brandId:
-          categoryId: 
-          colorId: 
-          createdAt:
-          description:
-          id:
-          image:
-          name:
-          numberOfSales:
-          price:
-          updatedAt:
-        },
-        {
-          brandId:
-          categoryId: 
-          colorId: 
-          createdAt:
-          description:
-          id:
-          image:
-          name:
-          numberOfSales:
-          price:
-          updatedAt:
-        },
-        ...
-      ]
+            "email": "teste@gmail.com.br",
+            "password": "123456",
+        }
     ```
 
-    Obs: Em caso de sucesso/falha na transação, há uma rota que traz essas informações para o usuário.
-
-11. Rota inexistente:
-
-    Route: ```"*"```
+3. Pega todos os helpinhos já criados:
     
-    Descrição: Nesta rota, caso o usuario escreva uma url inexistente, ele é redirecionado para a rota "/404".
+    Route GET : ```"/help/"``` 
 
-12. Rota 404 (not found):
+    Descrição: Pega todos os helpinhos já criados.
 
-    Route: ```"/404"```
+4. Pega todos o helpinho pelo id:
     
-    Descrição: Caso seja redirecionado pra essa rota, mostra para o usuário que a rota não existe e redireciona pra home.
+    Route GET : ```"/help/id/:id"``` 
+
+    Descrição: O usuário escolhe o helpinho que quer visualizar.
+   
+5. Pega todos o helpinho pela categoria:
+    
+    Route GET : ```"/help/category/:category"``` 
+
+    Descrição: O usuário escolhe o helpinho que quer categoria.
+
+ 6. Cria um novo helpinho:
+  
+    Route POST : ```"/help/"``` 
+  
+    Descrição: O usuário cria um novo helpinho a partir das informações enviadas.
+
+ 6. Altera as informações do helpinho:
+
+    Route PUT : ```"/help/"``` 
+  
+    Descrição: Após o usuário fazer uma doação, as informações do helpinho mudam.
 
 
